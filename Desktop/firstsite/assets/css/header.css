@@ -1,0 +1,21 @@
+#header-body{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 255, 0.719);
+    color:white;
+    
+}
+a{
+    color:orange;
+    text-decoration: none;
+}
+body{
+    margin: 0px;
+    background-color: antiquewhite;
+}
+#user-authentication{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;;
+}
