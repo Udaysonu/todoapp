@@ -1,0 +1,27 @@
+
+        Hello world how are you
+  <section id="feed-posts">
+        <h4>Posts</h4>
+        <form action="/users/createpost" id='new-post-form' method="POST">
+                <textarea name="content" cols="38" rows="4"></textarea>
+                <input type="submit" value="Post"> 
+        </form>
+  </section >
+<% if(user){%>
+
+
+<div id='posts-list-container'>
+        <ul ><% var i=1 %>
+                <% for(posts of posts) {%>
+                        
+                        <h3>POST <%=i %> </h3>
+                        <% i=i+1 %>
+                        <p style='font-size:0.7rem;color:grey'><%=posts.createdAt%></p>
+                        <li><%=posts.content%></li>
+
+                 <%}%>      
+        </ul>
+</div>
+<% }else{%>
+        <h2>Please LOGIN to view the posts</h2>
+        <%}%>
