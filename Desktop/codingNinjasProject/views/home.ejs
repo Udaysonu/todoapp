@@ -1,0 +1,82 @@
+
+<html>
+
+<head>
+
+    <link rel="stylesheet" type='text/css' href="/css/home.css">
+    <script src="https://kit.fontawesome.com/fdb222da35.js" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+<div id="screen_back">
+    <div id="screen">
+        <div id='title'>TODO APP</div>
+        <div><p><small>DESCRIPTION</small></p>
+
+        
+
+        <form method='post' action="/create"><span><textarea name="description" cols="60"  placeholder="What do you need to do?"></textarea cols="20" placeholder="What do you need to do?"></textarea></span></div>
+           <div style='display:flex'>             <div style="display:inline-block;width:50%;"><p><small>  CATEGORY: </small> </p> 
+        
+        
+            <select name="category">
+                <option selected>Choose a category</option>
+                <option>Personal    </option>
+                <option>School</option>
+                <option>Cleaning</option>
+                <option>Job</option>
+                <option>Other</option>
+            </select>
+        </div>                 <div style="display:inline-block;width:50%;"><p><small>  DUE DATE: </small> </p>      <input name='date' data-date-format="DD MMMM YYYY"  type='date'>    </div>          </div><br>
+        <div id='button_div'><button id='btn1' type="submit"><i class="fas fa-plus"></i> ADD TASK</button><button  id='btn2'> <a href="/delete" id="delete_button" style='text-decoration: none;color:white'>        <i class="far fa-trash-alt"></i>  DELETE</button>     </a>       </div></form></option>
+        <div> <br>
+            <%var count=0%>
+            <%for(task of tasks){%>
+            <div id='task_list'><div id='description'> <P> <input type='checkbox' id="<%=task.id%>" name='delete_box'  <%%>   <%=task.description%></P> <small> <i class="fas fa-calendar-week"></i>    <%=task.date%>     </small>      </div>          <div class='category'>  <p>  <%=task.category%> </p>    </div>    </div>
+                <%}%>
+        </div>
+    </div>
+ 
+
+
+</div>
+    
+
+</body>
+
+
+</html>
+
+<script>
+
+
+$(document).ready(function(){
+  $('#delete_button').on('click', function(e){
+      console.log('delete butotn clikcec')
+    e.preventDefault();
+  var item = new Array();
+    if($('input:checkbox:checked').length>0){
+      $('input:checkbox:checked').each(function(){
+        item.push($(this).attr('id'));
+      });
+      sendResponse(item);
+    }
+ });
+  function sendResponse(item) {
+    $.ajax({
+      type:'post',
+      url:"/delete",
+      data:{item:item},
+      success:function(data){
+        location.reload();
+      }
+    });
+  }
+});
+
+</script>

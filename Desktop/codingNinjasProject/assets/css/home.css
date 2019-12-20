@@ -1,0 +1,114 @@
+body{
+    overflow-x: hidden;
+}
+textarea{
+    font-size: 1.3em;
+    outline:none;
+    border:2px solid white;
+    border-color: white;
+  
+}
+select{
+    font-size: 1em;
+    outline:none;
+    border:2px solid white;
+    border-color: white;
+    background-color:white
+
+}
+input{  font-size: 1em;
+    outline:none;
+    border:2px solid white;
+    border-color: white;
+    background-color:white
+}
+#screen_back{
+    width:100vw;
+    
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    align-items: center;
+    background-color: lightgrey;
+}
+#screen{
+    padding:20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+}
+#title{
+    font-size: 2.2rem;
+    font-family:  'Lucida Sans Unicode', Arial, sans-serif;
+    color:grey;
+    text-align: center;
+}
+option{
+    font-size: 1em;
+    outline:none;
+    border:2px solid white;
+    border-color: white;
+}
+#button_div{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+#btn1{
+    color:white;
+    background-color: rgb(54, 54, 54);
+    font-size: 1.4rem;
+    padding:10px 20px 10px 20px;
+}
+#btn2{
+    color:white;
+    background-color: rgb(211, 15, 15);
+    font-size: 1.4rem;
+    padding:10px 20px 10px 20px;
+}
+button:hover{
+    opacity: 0.8;
+}
+#task_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:20px;
+}
+#task_list:nth-child(2n+1){
+    background-color: rgb(255, 255, 255);
+    
+}
+#task_list:nth-child(2n){
+    background-color: rgb(243, 243, 243);
+}
+.category p{
+ padding:10px;
+ color:white;
+ display: inline-block;
+box-sizing: border-box;
+ 
+background-color: rgb(255, 163, 58);
+}
+small{
+    color:grey
+
+}
+#screen div{
+     
+}
+ 
+/* #category:nth-child(2n){
+background-color: teal;
+} */
